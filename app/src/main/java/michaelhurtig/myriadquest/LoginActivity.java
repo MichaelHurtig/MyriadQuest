@@ -4,14 +4,36 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class LoginActivity extends ActionBarActivity {
+
+    EditText username;
+    EditText password;
+
+    // A fairly terrible login method... no security
+    public void login(View view){
+        String logName = username.getText().toString();
+        String logPass = password.getText().toString();
+
+        if (logName.equals("lancelot") && logPass.equals("kingArthur") ){
+            Toast.makeText(this, "Login Successfull", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "Login Failed" , Toast.LENGTH_SHORT).show();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        username = (EditText)findViewById(R.id.editText);
+        password = (EditText)findViewById(R.id.editText3);
     }
 
 
@@ -33,4 +55,5 @@ public class LoginActivity extends ActionBarActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
 }
