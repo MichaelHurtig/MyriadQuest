@@ -15,6 +15,8 @@ public class LoginActivity extends ActionBarActivity {
     EditText username;
     EditText password;
 
+    Quests test = new Quests("first test", "NG", "This is a test string");
+
     // A fairly terrible login method... no security
     public void login(View view){
         String logName = username.getText().toString();
