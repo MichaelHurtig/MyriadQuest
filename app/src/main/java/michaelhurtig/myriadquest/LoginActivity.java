@@ -1,5 +1,6 @@
 package michaelhurtig.myriadquest;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -20,7 +21,11 @@ public class LoginActivity extends ActionBarActivity {
         String logPass = password.getText().toString();
 
         if (logName.equals("lancelot") && logPass.equals("kingArthur") ){
-            Toast.makeText(this, "Login Successfull", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(this, ListActivity.class);
+            //pass data along with the intent
+            startActivity(intent);
         }
         else{
             Toast.makeText(this, "Login Failed" , Toast.LENGTH_SHORT).show();
