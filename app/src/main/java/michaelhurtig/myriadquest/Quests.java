@@ -17,6 +17,10 @@ public class Quests {
         this.setQuestText(questText);
     }
 
+/*    public void testMethod(Quests quests){
+        //zoom! a test!
+    }*/
+
     public String Title(){
         return title;
     }
