@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -17,7 +19,7 @@ import java.util.Arrays;
 import static michaelhurtig.myriadquest.R.layout.activity_list;
 
 
-public class MyListActivity extends android.app.ListActivity {
+public class MyListActivity extends ListActivity implements AdapterView.OnItemClickListener {
 
     private ArrayList<Quests> quests = new ArrayList<Quests>();
 
@@ -30,6 +32,7 @@ public class MyListActivity extends android.app.ListActivity {
         setContentView(R.layout.activity_list);
 
         ListView listView = (ListView)findViewById(android.R.id.list);
+        listView.setOnItemClickListener(this);
 
 /*        String[][] values = new String[][] {
                 {"item", "second"},
@@ -65,5 +68,8 @@ public class MyListActivity extends android.app.ListActivity {
     }
 
 
-
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, String.valueOf(id) , Toast.LENGTH_SHORT).show();
+    }
 }
