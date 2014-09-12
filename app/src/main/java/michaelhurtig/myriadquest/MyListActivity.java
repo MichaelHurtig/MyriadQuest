@@ -1,6 +1,7 @@
 package michaelhurtig.myriadquest;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,23 +17,31 @@ import java.util.Arrays;
 import static michaelhurtig.myriadquest.R.layout.activity_list;
 
 
-public class ListActivity extends Activity {
+public class MyListActivity extends android.app.ListActivity {
+
+    private ArrayList<Quests> quests = new ArrayList<Quests>();
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ListView listView = (ListView)findViewById(R.id.list);
+        ListView listView = (ListView)findViewById(android.R.id.list);
 
-        String[][] values = new String[][] {
+/*        String[][] values = new String[][] {
                 {"item", "second"},
                 {"item2", "test"},
                 {"item3", "test"}
         };
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rows, values[0]);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rows, values[0]);*/
 
+        quests.add(new Quests("Test","NG","Test Quest Text"));
+        quests.add(new Quests("Test 2","LG","Test 2 Quest Text"));
+        simpleAdapter adapter = new simpleAdapter(this, R.layout.rows, quests);
         listView.setAdapter(adapter);
     }
 

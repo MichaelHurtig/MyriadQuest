@@ -23,7 +23,7 @@ public class LoginActivity extends ActionBarActivity {
         if (logName.equals("lancelot") && logPass.equals("kingArthur") ){
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-            Intent intent = new Intent(this, ListActivity.class);
+            Intent intent = new Intent(this, MyListActivity.class);
             //pass data along with the intent
             startActivity(intent);
         }

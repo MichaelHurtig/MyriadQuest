@@ -21,15 +21,15 @@ public class Quests {
         //zoom! a test!
     }*/
 
-    public String Title(){
+    public String getTitle(){
         return title;
     }
 
-    public String Alignment(){
+    public String getAlignment(){
         return alignment;
     }
 
-    public String QuestText(){
+    public String getQuestText(){
         return questText;
     }
 
@@ -75,4 +75,6 @@ public class Quests {
             return false;
         }
     }
+
+
 }
