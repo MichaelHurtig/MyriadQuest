@@ -2,6 +2,7 @@ package michaelhurtig.myriadquest;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -71,5 +72,10 @@ public class MyListActivity extends ListActivity implements AdapterView.OnItemCl
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(this, String.valueOf(id) , Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, QuestDisplayActivity.class );
+        intent.putExtra("Quest", quests.get(position));
+
+        startActivity(intent);
     }
 }

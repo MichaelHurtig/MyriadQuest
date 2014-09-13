@@ -1,9 +1,11 @@
 package michaelhurtig.myriadquest;
 
+import java.io.Serializable;
+
 /**
  * Created by Michael Hurtig on 9/11/2014.
  */
-public class Quests {
+public class Quests implements Serializable {
 
     private String title;
     private String alignment;
