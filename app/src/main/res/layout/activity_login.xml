@@ -9,24 +9,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="lancelot"
+        android:hint="@string/name"
         android:ems="10"
         android:id="@+id/editText"
         android:layout_gravity="center_horizontal"
         android:textSize="18dp"
         android:textStyle="normal" />
-    <!--android:hint="@string/name"-->
+    <!---->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:text="kingArthur"
+        android:hint="@string/Password"
         android:ems="10"
         android:id="@+id/editText3"
         android:layout_gravity="center_horizontal"
         android:textSize="18dp"
         android:textStyle="italic" />
-    <!--android:hint="@string/Password"-->
+    <!---->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

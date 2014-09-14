@@ -1,8 +1,8 @@
 package michaelhurtig.myriadquest;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,15 +20,52 @@ public class LoginActivity extends ActionBarActivity {
         String logName = username.getText().toString();
         String logPass = password.getText().toString();
 
+        //terrible security. Probably want to create a 'User' class that can handle IDs
         if (logName.equals("lancelot") && logPass.equals("kingArthur") ){
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
+            //Display popup message
+            Toast.makeText(this, getString(R.string.login_succesful), Toast.LENGTH_SHORT).show();
 
+            //create and pass a new intent... if we were doing a sort bu alignment,
+            //would need to pass class
             Intent intent = new Intent(this, MyListActivity.class);
-            //pass data along with the intent
             startActivity(intent);
         }
+
+        // Check for user name
+        else if ( nameCheck(logName) == false){
+            username.setError(getString(R.string.username_error));
+        }
+
+        // Check for password
+        else if (nameCheck(logName) ==  true) {
+            if( passCheck(logPass) == false){
+                password.setError(getString(R.string.password_error));
+            }
+        }
+
+        // Report login failure
         else{
-            Toast.makeText(this, "Login Failed" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.login_failed) , Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //Helper method to handle validation... can be updated easier later.
+    private boolean nameCheck(String string){
+        if( string.toString().length() == 0 ){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    //Helper method to handle validation.
+    private boolean passCheck(String string){
+        if( string.toString().length() == 0){
+            return false;
+        }
+        else{
+            return true;
         }
     }
 

@@ -1,22 +1,20 @@
 package michaelhurtig.myriadquest;
 
 import android.app.Activity;
-import android.content.ClipData;
 import android.content.Context;
-import android.graphics.LayerRasterizer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 /**
  * Created by Michael Hurtig on 9/11/2014.
  */
+
+//An adapter to help display quest information.
 public class simpleAdapter extends ArrayAdapter<Quests> {
     private Activity context;
     private String title;
