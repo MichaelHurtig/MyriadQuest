@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 /**
@@ -40,10 +42,22 @@ public class simpleAdapter extends ArrayAdapter<Quests> {
 
         if( quests != null){
             TextView _title = (TextView) var.findViewById(R.id.rowTextView);
+            TextView _align = (TextView) var.findViewById(R.id.rowAlignView);
+            TextView _quest = (TextView) var.findViewById(R.id.rowQuestView);
+
 
             if(_title != null){
                 _title.setText(quests.getTitle());
             }
+
+            if(_align != null){
+                _align.setText(quests.getAlignment());
+            }
+
+            if(_quest != null){
+                _quest.setText(quests.getQuestText());
+            }
+
         }
 
         return var;

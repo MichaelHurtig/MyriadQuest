@@ -24,9 +24,6 @@ public class MyListActivity extends ListActivity implements AdapterView.OnItemCl
 
     private ArrayList<Quests> quests = new ArrayList<Quests>();
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,16 +32,15 @@ public class MyListActivity extends ListActivity implements AdapterView.OnItemCl
         ListView listView = (ListView)findViewById(android.R.id.list);
         listView.setOnItemClickListener(this);
 
-/*        String[][] values = new String[][] {
-                {"item", "second"},
-                {"item2", "test"},
-                {"item3", "test"}
-        };
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.rows, values[0]);*/
-
-        quests.add(new Quests("Test","NG","Test Quest Text"));
-        quests.add(new Quests("Test 2","LG","Test 2 Quest Text"));
+        quests.add(new Quests("Bug Hunt!","NG","Looking for individuals who want to " +
+                "track down and destroy any and all bugs. Prospective must have a " +
+                "flexible attitude and not want to take advantage of others to qualify. " +
+                "See Magus Brindlehauf for details!"));
+        quests.add(new Quests("Imperium Romanum","LN","Offendicula de Imperium Romanorum. " +
+                "Bene mereretur imperium merces et servite salis, et sors in civitate Roman. " +
+                "Nam et de gloria Romae !"));
+        quests.add(new Quests("Rat Season", "NN", "Looking for some person to come clear out" +
+                "my cellar of the darned varmints. Paying in 'taters."));
         simpleAdapter adapter = new simpleAdapter(this, R.layout.rows, quests);
         listView.setAdapter(adapter);
     }
@@ -71,7 +67,7 @@ public class MyListActivity extends ListActivity implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, String.valueOf(id) , Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, String.valueOf(id) , Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, QuestDisplayActivity.class );
         intent.putExtra("Quest", quests.get(position));

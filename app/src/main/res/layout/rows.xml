@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<TextView
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rowTextView">
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:padding="6dip"
+    android:background="@drawable/abc_item_background_holo_light"
+    android:clickable="false">
 
-</TextView>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowTextView"
+        android:padding="10dp"
+        android:paddingLeft="25dp"
+        android:textStyle="bold"
+        android:text="text"
+        android:layout_alignTop="@+id/rowAlignView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="18dp">
+    </TextView>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rowAlignView"
+        android:padding="10dp"
+        android:paddingLeft="25dp"
+        android:text="text"
+        android:layout_toEndOf="@+id/rowTextView"
+        android:textStyle="italic"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/rowTextView"
+        android:textSize="18dp">
+    </TextView>
+
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rowQuestView"
+        android:padding="10dp"
+        android:paddingLeft="15dp"
+        android:text="text"
+        android:layout_toEndOf="@+id/rowTextView"
+        android:textStyle="normal"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/rowAlignView"
+        android:textAlignment="center"
+        android:singleLine="true"
+        android:textSize="18dp">
+    </TextView>
+
+</RelativeLayout>

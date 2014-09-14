@@ -9,8 +9,40 @@
     tools:context="michaelhurtig.myriadquest.QuestDisplayActivity">
 
     <TextView
-        android:text="@string/hello_world"
+        android:id="@+id/displayTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:padding="10dp"
+        android:paddingLeft="25dp"
+        android:textStyle="bold"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/displayAlignment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:layout_toEndOf="@+id/displayTitle"
+        android:padding="10dp"
+        android:paddingLeft="25dp"
+        android:layout_alignTop="@+id/displayTitle"
+        android:layout_toRightOf="@+id/displayTitle"
+        android:textStyle="italic"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/displayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="text"
+        android:layout_toEndOf="@+id/displayAlignment"
+        android:padding="10dp"
+        android:paddingLeft="25dp"
+        android:layout_below="@+id/displayTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textStyle="normal"
+        android:textSize="18dp" />
 
 </RelativeLayout>

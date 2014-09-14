@@ -1,17 +1,42 @@
 package michaelhurtig.myriadquest;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
 
 
 public class QuestDisplayActivity extends ActionBarActivity {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest_display);
+
+        Intent intent = getIntent();
+        Quests quests = (Quests) intent.getSerializableExtra("Quest");
+
+        TextView titleView = (TextView) findViewById(R.id.displayTitle);
+        TextView alignView = (TextView) findViewById(R.id.displayAlignment);
+        TextView questView = (TextView) findViewById(R.id.displayText);
+
+        if (titleView != null) {
+            titleView.setText(quests.getTitle());
+        }
+
+        if(alignView != null){
+            alignView.setText(quests.getAlignment());
+        }
+
+        if(questView != null){
+            questView.setText(quests.getQuestText());
+        }
     }
 
 
