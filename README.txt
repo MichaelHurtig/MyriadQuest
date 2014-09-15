@@ -38,7 +38,7 @@ Quest Levels:
 ===============================================================================
 0. Level 0: completed
 1. Level 1: completed
-2. Level 2:
+2. Level 2: in progress
 3. Level 3:
 4. Level 4:
 5. Level 5:
@@ -49,7 +49,8 @@ Class List:
 1. LoginActivity.java 			- Activity used to control login
 2. MyListActivity.java 			- Activity used to populate a ListView
 3. QuestDisplayActivity.java 	- Activity used to display total quest info
-4. Quests.java 					- Class made to handle quest data and to curtail
-							      argument proliferation
-5. simpleAdapter.java 			- Class made to modify Adapter to display quest 
-								  info. 
+4. Quests.java 					- Class made to handle quest data and to
+                                  curtail argument proliferation.
+5. simpleAdapter.java 			- Class made to modify Adapter to display
+                                  quest info.
+6. User.java                    - Class made to encapsulate user data
