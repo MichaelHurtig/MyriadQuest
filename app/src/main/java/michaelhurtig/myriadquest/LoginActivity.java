@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-// Branch Test Code. Making sure there are no changes to the master branch. 
+// Branch Test Code. Making sure there are no changes to the master branch.
 public class LoginActivity extends ActionBarActivity {
 
     EditText username;
@@ -33,13 +33,13 @@ public class LoginActivity extends ActionBarActivity {
         }
 
         // Check for user name
-        else if ( nameCheck(logName) == false){
+        else if (!nameCheck(logName)){
             username.setError(getString(R.string.username_error));
         }
 
         // Check for password
-        else if (nameCheck(logName) ==  true) {
-            if( passCheck(logPass) == false){
+        else if (nameCheck(logName)) {
+            if(!passCheck(logPass)){
                 password.setError(getString(R.string.password_error));
             }
         }
@@ -52,7 +52,7 @@ public class LoginActivity extends ActionBarActivity {
 
     //Helper method to handle validation... can be updated easier later.
     private boolean nameCheck(String string){
-        if( string.toString().length() == 0 ){
+        if(string.length() == 0 ){
             return false;
         }
         else{
@@ -62,7 +62,7 @@ public class LoginActivity extends ActionBarActivity {
 
     //Helper method to handle validation.
     private boolean passCheck(String string){
-        if( string.toString().length() == 0){
+        if(string.length() == 0){
             return false;
         }
         else{
