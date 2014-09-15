@@ -1,5 +1,7 @@
 package michaelhurtig.myriadquest;
 
+import java.util.Arrays;
+
 /**
  * Created by Michael Hurtig on 9/15/2014.
  */
@@ -37,8 +39,19 @@ public class User {
         return alignment;
     }
 
-    public void setAlignment(String alignment) {
-        this.alignment = alignment;
+    public boolean setAlignment(String alignment) {
+        String[] alignments = {"LG","NG","CG",
+                "LN","NN","CN",
+                "LE","NE","CE"};
+
+        if(Arrays.asList(alignments).contains(alignment)){
+            this.alignment = alignment;
+            return true;
+        }
+        else {
+            return false;
+        }
+
     }
 
     public String getOrigin() {
