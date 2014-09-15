@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+// Branch Test Code. Making sure there are no changes to the master branch. 
 public class LoginActivity extends ActionBarActivity {
 
     EditText username;
