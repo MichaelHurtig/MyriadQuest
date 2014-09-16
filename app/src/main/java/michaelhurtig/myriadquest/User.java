@@ -44,6 +44,7 @@ public class User {
                 "LN","NN","CN",
                 "LE","NE","CE"};
 
+        //validate for alignment
         if(Arrays.asList(alignments).contains(alignment)){
             this.alignment = alignment;
             return true;
@@ -60,5 +61,13 @@ public class User {
 
     public void setOrigin(String origin) {
         this.origin = origin;
+    }
+
+    public boolean testUsername(){
+        return false;
+    }
+
+    public boolean testPassword(){
+        return false;
     }
 }
